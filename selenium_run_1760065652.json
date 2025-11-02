@@ -1,0 +1,9 @@
+{
+  "run": "selenium_run_1760065652",
+  "search_query": "https://www.google.com/?zx=1760065637387&no_sw_cr=1",
+  "timestamp": 1760065652,
+  "num_results_found": 0,
+  "status": "FAIL",
+  "message": "No results for 'https://www.google.com/?zx=1760065637387&no_sw_cr=1'.",
+  "screenshot": "automation_logs\\selenium_run_1760065652.png"
+}

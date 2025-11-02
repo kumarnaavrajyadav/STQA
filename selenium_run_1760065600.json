@@ -1,0 +1,9 @@
+{
+  "run": "selenium_run_1760065600",
+  "search_query": "http://127.0.0.1:5000/run_automation?query=TestForge+Automation",
+  "timestamp": 1760065600,
+  "num_results_found": 0,
+  "status": "FAIL",
+  "message": "No results for 'http://127.0.0.1:5000/run_automation?query=TestForge+Automation'.",
+  "screenshot": "automation_logs\\selenium_run_1760065600.png"
+}

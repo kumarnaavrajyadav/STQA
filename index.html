@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>🧪 TestForge – Software Testing & Quality Management</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <h1>🧪 TestForge – Software Testing & Quality Management</h1>
+
+  <div class="container">
+    <div class="test-box">
+      <h3>White-Box Testing</h3>
+      <textarea id="white-box-code" placeholder="def sample(): print('Hello')"></textarea>
+      <button id="run-white">Run White-Box</button>
+    </div>
+
+    <div class="test-box">
+      <h3>Black-Box Testing</h3>
+      <textarea id="black-box-input" placeholder='{"function":"def add(a,b): return a+b","inputs":[[1,2],[2,2]],"expected":[3,4]}'></textarea>
+      <button id="run-black">Run Black-Box</button>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="test-box">
+      <h3>Automation Testing (Unit 4)</h3>
+      <input type="text" id="automation-url" placeholder="https://www.youtube.com/">
+      <button id="run-automation">Run Automation</button>
+    </div>
+
+    <div class="test-box">
+      <h3>Object-Oriented Testing (Unit 5)</h3>
+      <button id="run-oop">Run OOP Tests</button>
+    </div>
+
+    <div class="test-box">
+      <h3>Software Quality Metrics (Unit 6)</h3>
+      <button id="run-metrics">Load Metrics</button>
+    </div>
+  </div>
+
+  <script>
+    async function postData(url, data) {
+      const res = await fetch(url, { method: "POST", body: data });
+      return await res.json();
+    }
+
+    document.getElementById("run-white").onclick = async () => {
+      const form = new FormData();
+      form.append("code", document.getElementById("white-box-code").value);
+      alert(JSON.stringify(await postData("/api/white_box", form), null, 2));
+    };
+
+    document.getElementById("run-black").onclick = async () => {
+      const form = new FormData();
+      form.append("data", document.getElementById("black-box-input").value);
+      alert(JSON.stringify(await postData("/api/black_box", form), null, 2));
+    };
+
+    document.getElementById("run-automation").onclick = async () => {
+      const form = new FormData();
+      form.append("url", document.getElementById("automation-url").value);
+      alert(JSON.stringify(await postData("/api/automation", form), null, 2));
+    };
+
+    document.getElementById("run-oop").onclick = async () => {
+      const res = await fetch("/api/oop");
+      alert(JSON.stringify(await res.json(), null, 2));
+    };
+
+    document.getElementById("run-metrics").onclick = async () => {
+      const res = await fetch("/api/metrics");
+      alert(JSON.stringify(await res.json(), null, 2));
+    };
+  </script>
+</body>
+</html>

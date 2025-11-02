@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mini Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: #f5f5f5;
+            margin: 20px;
+        }
+        .chart-container {
+            width: 300px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        h2 {
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>📊 Mini Software Metrics Dashboard</h2>
+
+    <div class="chart-container">
+        <canvas id="barChart"></canvas>
+    </div>
+
+    <div class="chart-container">
+        <canvas id="pieChart"></canvas>
+    </div>
+
+    <script>
+        fetch("/metrics")
+        .then(response => response.json())
+        .then(data => {
+            // Bar Chart for Quality Metrics
+            new Chart(document.getElementById("barChart"), {
+                type: "bar",
+                data: {
+                    labels: ["Defects", "Effectiveness", "Coverage", "Maintainability"],
+                    datasets: [{
+                        label: "Values",
+                        data: [
+                            data.defect_density, 
+                            data.test_effectiveness, 
+                            data.code_coverage, 
+                            data.maintainability_index
+                        ],
+                        backgroundColor: ["#f44336", "#2196F3", "#FFC107", "#4CAF50"]
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: { display: false },
+                        title: { display: true, text: "Quality Metrics" }
+                    },
+                    scales: {
+                        y: { beginAtZero: true }
+                    }
+                }
+            });
+
+            // Pie Chart for Test Stats
+            new Chart(document.getElementById("pieChart"), {
+                type: "pie",
+                data: {
+                    labels: ["Executed", "Reported", "Closed"],
+                    datasets: [{
+                        data: [
+                            data.test_cases_executed, 
+                            data.defects_reported, 
+                            data.defects_closed
+                        ],
+                        backgroundColor: ["#03A9F4", "#FF9800", "#8BC34A"]
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        title: { display: true, text: "Test Case Summary" }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

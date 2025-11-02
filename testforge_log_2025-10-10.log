@@ -1,0 +1,47 @@
+2025-10-10 23:51:04,820 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-10-10 23:51:04,821 - INFO - [33mPress CTRL+C to quit[0m
+2025-10-10 23:51:04,823 - INFO -  * Restarting with stat
+2025-10-10 23:51:05,196 - WARNING -  * Debugger is active!
+2025-10-10 23:51:05,203 - INFO -  * Debugger PIN: 435-030-852
+2025-10-10 23:51:16,275 - INFO - 127.0.0.1 - - [10/Oct/2025 23:51:16] "GET / HTTP/1.1" 200 -
+2025-10-10 23:51:16,483 - INFO - 127.0.0.1 - - [10/Oct/2025 23:51:16] "GET /static/style.css HTTP/1.1" 200 -
+2025-10-10 23:51:18,374 - INFO - 127.0.0.1 - - [10/Oct/2025 23:51:18] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-10-10 23:51:20,233 - INFO - 127.0.0.1 - - [10/Oct/2025 23:51:20] "GET /metric HTTP/1.1" 200 -
+2025-10-10 23:51:20,267 - INFO - 127.0.0.1 - - [10/Oct/2025 23:51:20] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-10-10 23:51:23,283 - INFO - ===== \U0001f9ea TestForge Automation Started =====
+2025-10-10 23:51:23,286 - INFO - Black Box Tests: {'total': 3, 'passed': 2, 'failed': 1, 'details': [{'name': 'Login page renders', 'ok': True, 'msg': 'OK'}, {'name': 'Create project flow', 'ok': True, 'msg': 'OK'}, {'name': 'File upload validation', 'ok': False, 'msg': 'upload size check failed'}]}
+2025-10-10 23:51:23,286 - INFO - White Box Tests: {'total': 2, 'passed': 2, 'failed': 0, 'details': [{'name': 'Function X returns expected output', 'ok': True, 'msg': 'OK'}, {'name': 'Edge handling path for input Y', 'ok': True, 'msg': 'OK'}]}
+2025-10-10 23:51:23,286 - INFO - OOP Tests: {'total': 1, 'passed': 0, 'failed': 1, 'details': [{'name': 'Calculator import', 'ok': False, 'msg': 'failed to import test_cases.oo_app'}]}
+2025-10-10 23:51:23,286 - INFO - Metrics: {'code_coverage': '75%', 'cyclomatic_complexity': 3.8, 'maintainability_index': 78}
+2025-10-10 23:51:23,286 - INFO - Summary: {'total': 6, 'passed': 4, 'failed': 2, 'pass_rate': '66.67%'}
+2025-10-10 23:51:23,316 - ERROR - Automation runner error: table test_results has no column named run_date
+Traceback (most recent call last):
+  File "D:\Final Year\STAQ\FA\TestForge\modules\automation.py", line 48, in run_all_tests
+    models.save_test_results(self.results["summary"])
+  File "D:\Final Year\STAQ\FA\TestForge\database\models.py", line 37, in save_test_results
+    cur.execute("""
+sqlite3.OperationalError: table test_results has no column named run_date
+2025-10-10 23:51:23,336 - INFO - 127.0.0.1 - - [10/Oct/2025 23:51:23] "[35m[1mGET /dashboard HTTP/1.1[0m" 500 -
+2025-10-10 23:51:23,446 - INFO - 127.0.0.1 - - [10/Oct/2025 23:51:23] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-10-10 23:51:23,511 - INFO - 127.0.0.1 - - [10/Oct/2025 23:51:23] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-10-10 23:51:23,574 - INFO - 127.0.0.1 - - [10/Oct/2025 23:51:23] "GET /dashboard?__debugger__=yes&cmd=resource&f=console.png&s=4hKPMiGQ9ePYpO90IneJ HTTP/1.1" 200 -
+2025-10-10 23:51:23,644 - INFO - 127.0.0.1 - - [10/Oct/2025 23:51:23] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-10-10 23:52:11,847 - INFO -  * Detected change in 'D:\\Final Year\\STAQ\\FA\\TestForge\\app.py', reloading
+2025-10-10 23:52:11,919 - INFO -  * Restarting with stat
+2025-10-10 23:52:12,568 - WARNING -  * Debugger is active!
+2025-10-10 23:52:12,574 - INFO -  * Debugger PIN: 435-030-852
+2025-10-10 23:52:16,642 - INFO -  * Detected change in 'D:\\Final Year\\STAQ\\FA\\TestForge\\app.py', reloading
+2025-10-10 23:52:16,676 - INFO -  * Restarting with stat
+2025-10-10 23:52:17,037 - WARNING -  * Debugger is active!
+2025-10-10 23:52:17,041 - INFO -  * Debugger PIN: 435-030-852
+2025-10-10 23:52:18,101 - INFO -  * Detected change in 'D:\\Final Year\\STAQ\\FA\\TestForge\\app.py', reloading
+2025-10-10 23:52:18,146 - INFO -  * Restarting with stat
+2025-10-10 23:52:18,556 - WARNING -  * Debugger is active!
+2025-10-10 23:52:18,562 - INFO -  * Debugger PIN: 435-030-852
+2025-10-10 23:52:23,627 - INFO -  * Detected change in 'D:\\Final Year\\STAQ\\FA\\TestForge\\app.py', reloading
+2025-10-10 23:52:23,663 - INFO -  * Restarting with stat
+2025-10-10 23:52:24,066 - WARNING -  * Debugger is active!
+2025-10-10 23:52:24,069 - INFO -  * Debugger PIN: 435-030-852
+2025-10-10 23:52:28,128 - INFO -  * Detected change in 'D:\\Final Year\\STAQ\\FA\\TestForge\\modules\\white_box.py', reloading
+2025-10-10 23:52:28,168 - INFO -  * Restarting with stat
